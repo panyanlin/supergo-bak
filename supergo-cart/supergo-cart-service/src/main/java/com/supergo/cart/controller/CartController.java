@@ -1,5 +1,6 @@
 package com.supergo.cart.controller;
 
+import com.supergo.common.pojo.Cart;
 import com.supergo.http.HttpResult;
 import com.supergo.cart.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,17 +54,15 @@ public class CartController {
      * @Time 14:26
     */
     @RequestMapping("/addCart")
-    public HttpResult addCart(@RequestBody Map<String,String> cartMap, HttpServletRequest request){
+    public HttpResult addItemsToCartList(@RequestBody List<Cart> cartList, Long itemId, Integer num){
         try {
-            // 1）查询购物车列表
-            List<Map<String,String>> cartList = (List<Map<String,String>>)this.cartList(request).getData();
             // 2) 获取token
             // String token = request.getHeader("Authorization");
             //3) 解析token
             // UserInfo user = JwtUtils.getInfoFromToken(token, "czxy");
             //4）调用服务层方法，实现购物车添加
             // cartService.addCart(user.getId(),cartMap,cartList);
-            cartService.addCart(123,cartMap,cartList);
+            List<Cart> carts = cartService.addItemsToCartList(cartList, itemId, num);
             //添加成功
             return HttpResult.ok();
         } catch (Exception e) {
@@ -99,9 +98,9 @@ public class CartController {
             //2) 解析token，获取用户id
             // UserInfo user = JwtUtils.getInfoFromToken(token, "czxy");
             // Integer userId = user.getId();
-            Integer userId = 123;
+            String userId = "";
             //3）查询该用户购物车列表数据
-            List<Map<String,String>> cartList = cartService.cartList(userId);
+            List<Cart> cartList = cartService.findRedisCartList(userId);
             return HttpResult.ok(cartList);
         } catch (Exception e) {
             e.printStackTrace();

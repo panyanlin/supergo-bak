@@ -113,7 +113,8 @@ public class SeckillOrderController {
             seckillOrderService.add(user.getId(),seckillId);
             return HttpResult.ok("抢购成功");
         } catch (Exception e) {
-            return  HttpResult.ok(e.getMessage());
+            //抢购异常
+            return  HttpResult.error(e.getMessage());
         }
     }
 }

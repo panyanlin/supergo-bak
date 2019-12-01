@@ -135,7 +135,7 @@ public class CartServiceImpl implements CartService {
      * 需求：添加redis购物车
      *
      * @param cartList
-     * @param username
+     * @param userId
      */
     public void addRedisCart(List<Cart> cartList, String userId) {
         //向redis添加购物车数据

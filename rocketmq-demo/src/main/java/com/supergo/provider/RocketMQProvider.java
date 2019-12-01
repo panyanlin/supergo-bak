@@ -20,7 +20,7 @@ public class RocketMQProvider {
         //创建一个消息的生产者，且指定一个组
         DefaultMQProducer producer = new DefaultMQProducer("test-groupA");
         //设置namesrv地址
-        producer.setNamesrvAddr("172.17.0.2:9876");
+        producer.setNamesrvAddr("192.168.66.66:9876");
         //开启
         producer.start();
 

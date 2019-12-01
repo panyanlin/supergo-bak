@@ -4,8 +4,8 @@ import org.csource.fastdfs.*;
 
 /***
  *
- * @Author:shenkunlin
- * @Description:itheima
+ * @Author:jackhu
+ * @Description:jackhu
  * @date: 2019/3/6 17:09
  *  FastDFS文件上传
  ****/

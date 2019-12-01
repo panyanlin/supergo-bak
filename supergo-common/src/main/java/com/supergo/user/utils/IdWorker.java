@@ -6,8 +6,8 @@ import java.net.NetworkInterface;
 
 /***
  *
- * @Author:shenkunlin
- * @Description:itheima
+ * @Author:jackhu
+ * @Description:jackhu
  * @date: 2019/3/24 17:42
  *
  ****/

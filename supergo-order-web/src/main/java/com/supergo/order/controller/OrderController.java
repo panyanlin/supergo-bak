@@ -13,8 +13,8 @@ import java.util.Date;
 
 /***
  *
- * @Author:shenkunlin
- * @Description:itheima
+ * @Author:jackhu
+ * @Description:jackhu
  * @date: 2019/3/24 16:40
  * 接收用户订单信息
  ****/

@@ -34,6 +34,8 @@ public class MultiThreadingCreateOrder {
     private SeckillGoodsMapper seckillGoodsMapper;
 
     @Autowired
+
+
     private IdWorker idWorker;
 
     /*****
@@ -99,6 +101,8 @@ public class MultiThreadingCreateOrder {
                         UUID.randomUUID().toString());
                 messageSender.sendMessage(messageInfo);*/
             } catch (Exception e) {
+
+                //发送消息
 
                 //向上抛出异常,让Spring的事务生效
                 throw new RuntimeException(e);
